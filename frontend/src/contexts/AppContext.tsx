@@ -29,7 +29,6 @@ export const AppContextProvider = ({
   const { isError } = useQuery("validateToken", apiClient.validateToken, {
     retry: false,
   });
-
   // Rendering the AppContext.Provider component with children
   return (
     <AppContext.Provider
