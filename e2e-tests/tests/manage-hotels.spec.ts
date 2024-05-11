@@ -19,7 +19,6 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByText("Sign in Successfull!")).toBeVisible();
 });
 test("should allow user to add a hotel", async ({ page }) => {
-  test.slow();
   await page.goto(`${UI_URL}add-hotel`);
 
   await page.locator('[name="name"]').fill("Test Hotel");
