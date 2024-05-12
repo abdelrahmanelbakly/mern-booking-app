@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import myHotelRoutes from "./routes/my-hotels";
+import hotelRoutes from "./routes/hotels";
 
 // Connect to MongoDB using the provided connection string from environment variables
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 app.use("/api/auth", authRoutes); // Routes for authentication
 app.use("/api/users", userRoutes); // Routes for user-related operations
 app.use("/api/my-hotels", myHotelRoutes);
+app.use("/api/hotels", hotelRoutes);
 //catch all
 app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
