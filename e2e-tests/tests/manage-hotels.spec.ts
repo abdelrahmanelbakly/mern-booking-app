@@ -39,8 +39,6 @@ test("should allow user to add a hotel", async ({ page }) => {
   await page.locator('[name="childCount"]').fill("4");
 
   await page.setInputFiles('[name="imageFiles"]', [
-    path.join(__dirname, "files", "img1.jpg"),
-    path.join(__dirname, "files", "img2.jpg"),
     path.join(__dirname, "files", "img3.jpg"),
   ]);
 
